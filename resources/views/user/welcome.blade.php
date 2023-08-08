@@ -12,7 +12,7 @@
             <section id="home">
                 <div class="md:mt-0">
                     <section class="mb-16 overflow-hidden">
-                        <div class="relative overflow-hidden bg-no-repeat bg-cover xl:min-h-screen" style="background-image: url('images/intro_image.png'); height: 500px;">
+                        <div class="relative overflow-hidden bg-no-repeat bg-cover xl:min-h-screen" style="background-image: url('images/bg-mygrocery.jpg'); height: 500px;">
                             <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.763);">
                                 <div class="flex justify-center items-center h-full mt-10 md:mt-0">
                                     <div class="text-center text-white px-6 md:px-12">
@@ -41,7 +41,7 @@
                             {{-- Canned Goods --}}
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=canned'}}">
-                                    <img src="images/mycategories/canned.png" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/canned.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Canned Goods</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-6 lg:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -49,7 +49,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=breads_and_sweets'}}">
-                                    <img src="images/mycategories/bread.png" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/breads.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Breads and Sweets</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -57,7 +57,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=snacks'}}">
-                                    <img src="images/mycategories/snack.png" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/snacks.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Snacks</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -65,7 +65,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=meats_and_poultry'}}">
-                                    <img src="images/mycategories/meat.png" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/meats.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Meats and Poultry</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -73,7 +73,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=fruits_and_veggies'}}">
-                                    <img src="images/mycategories/fruits.png" class="md:w-26 md:h-26 w-36 h-36 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/veggies.png') }}" class="md:w-26 md:h-26 w-36 h-36 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Fruits and Veggies</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -81,7 +81,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=instant_goods'}}">
-                                    <img src="images/mycategories/instant.png" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/instant.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Instant Goods</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -89,7 +89,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=beverages'}}">
-                                    <img src="images/mycategories/beverages.png" class="md:w-46 md:h-36 w-46 h-40 mx-auto mb-1">
+                                    <img src="{{ asset('images/mycategories/beverage.png') }}" class="md:w-46 md:h-36 w-46 h-40 mx-auto mb-1">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Beverages</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
@@ -97,7 +97,7 @@
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=others'}}">
-                                    <img src="images/mycategories/others.png" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1+">
+                                    <img src="{{ asset('images/mycategories/others.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1+">
                                     <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Others</h5>
                                     <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
                                     <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
