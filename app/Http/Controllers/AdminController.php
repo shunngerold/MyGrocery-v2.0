@@ -42,4 +42,24 @@ class AdminController extends Controller
     public function config_admin() {
         return view('admin.config');
     }
+    public function new_product(Request $request) {
+        $validateProduct = $request->validate([
+            'product_image' => ['required'],
+            'product_name' => ['required','regex:/^[A-Za-z]+$/'],
+            'category' => ['required'],
+            'price' => ['required','regex:/^\d+$/'],
+            'stock' => ['required','regex:/^\d+$/'],
+            'description' => ['required','max:100'],
+            'date_in_wh' => ['required'],
+            'date_expiry' => ['required'],
+            'active' => ['regex:/^(1|null)$/'],
+        ]);
+
+        if ($request->hasFile('product_image')) {
+            $validateProduct['product_image'] = $request->file('product_image')->store('product_image','public');
+        }
+        
+        Products::create($validateProduct);
+        return redirect(route('admin.add.product'))->with('message','Successfuly Added!');
+    }
 }

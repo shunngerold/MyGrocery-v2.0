@@ -11,6 +11,7 @@ class ProductController extends Controller
     public function show_products(Request $request, Products $products) {
         return view('user.product-content',[
             'products' => $products::latest()
+            ->filter(request(['category']))
             ->paginate(10)
         ]);
     }
