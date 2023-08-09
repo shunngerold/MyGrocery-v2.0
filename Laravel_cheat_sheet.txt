@@ -1,0 +1,64 @@
+<<<============== LARAVEL CHEAT SHEET ===============>>>
+
+################# CREATE NEW PROJECT ##################
+=> composer create-project --prefer-dist laravel/laravel <PROJECT-NAME>
+
+################ RUN ARTISAN / SERVER #################
+>> RUN: php artisan serve
+>> if artisan is not working: php -S 127.0.0.1:8000 -t public/
+
+################### PACKAGES ###################
+=> CLOCKWORK: composer require itsgoingd/clockwork
+=> TERMINAL TINKER: php artisan tinker
+	=> COMMANDS:
+		- \App\Models\<class>::first() = first data on database.
+		- \App\Models\<class>::find() = find specific data.
+		- \App\Models\<class>-><model> (ex. \App\Models\User->listings)
+
+################### INSTALL LARAVEL UI  ####################
+=> composer require laravel/ui
+=> php artisan ui:auth
+
+>> REMOVE LARAVEL/UI: composer remove laravel/ui
+
+################### INSTALL SOCIALITE  ####################
+=> composer require laravel/socialite
+
+>> LINK: https://laravel.com/docs/9.x/socialite
+
+################### INSTALL CURL ####################
+=> composer require ixudra/curl
+
+>> LINK: https://github.com/ixudra/curl
+
+############## LARAVEL COMMANDS ##############
+=> DELETE CONTROLLER: php artisan controller:delete <controller_name>
+=> MIGRATION: php artisan make:migration <table name>
+	=> ADD COLUMN: php artisan make:migration add_<field name>_to_<table name>_table --table=<table name>
+=> MAKE MODEL: php artisan make:model <class name>
+=> MAKE CONTROLLER: php artisan make:controller <table name>
+=> MIDDLEWARE: php artisan make:middleware <table name>
+=> SEEDERS: php artisan db:seed
+=> FACTORY: php artisan make:factory <name>
+
+>> IMPORT TABLES: php artisan migrate
+>> OPTIMIZE: php artisan optimize
+>> CLEAR CACHE: php artisan cache:clear
+>> SESSION CLEAR: php artisan session:clear
+>> CONFIG CLEAR: php artisan config:clear
+>> REFRESH: php artisan migrate:refresh
+	o w/ seed: php artisan migrate:refresh --seed
+>> RELOAD CLASS MAPPINGS: composer dump-autoload
+
+################### ACCESS PUBLIC IMAGE FOLDER ####################
+=> php artisan storage:link
+
+################### VITE SERVER  ####################
+=> npm install
+=> npm run dev
+
+################ ERROR SOLUTIONS #################
+################ FROM GITHUB #################
+// Can't run your code? Here's the solution.
+>> Install this : composer install
+>> Generate application key: php artisan key:generate
