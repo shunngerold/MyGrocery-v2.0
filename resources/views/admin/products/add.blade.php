@@ -98,6 +98,9 @@
             <a href="" class="px-5 py-3 bg-yellow-400 hover:bg-yellow-600 hover:text-white duration-500 w-full rounded-xl border border-2 border-black shadow-md">
                 <p class="text-lg font-semibold flex justify-center items-center">Reset</p>
             </a>
+            <a href="{{ route('admin.products') }}" class="px-5 py-3 bg-yellow-400 hover:bg-yellow-600 hover:text-white duration-500 w-full rounded-xl border border-2 border-black shadow-md">
+                <p class="text-lg font-semibold flex justify-center items-center">Back</p>
+            </a>
         </div>
     </div>
 </x-admin-layout>

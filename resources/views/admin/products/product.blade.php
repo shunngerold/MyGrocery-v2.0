@@ -49,11 +49,13 @@
     </div>
     <div class="m-4 px-4 py-6">
         <div class="flex flex-col gap-5 justify-center items-center">
-            <div class="flex justify-center items-center gap-2 py-5">
-                <input type="text" name="" placeholder="Search" class="px-2 py-2 border border-2 border-black rounded-md">
-                <a href="" class="px-3 py-2 bg-[#239807] text-white text-xl font-semibold rounded-lg">
-                    <ion-icon name="search-sharp"></ion-icon>
-                </a>
+            <div class="">
+                <form action="" method="GET" class="flex justify-center items-center gap-2 py-5">
+                    <input type="text" name="search" placeholder="Search" class="px-2 py-2 border border-2 border-black rounded-md">
+                    <button type="submit" class="px-3 py-2 bg-[#239807] text-white text-xl font-semibold rounded-lg">
+                        <ion-icon name="search-sharp"></ion-icon>
+                    </button>
+                </form>
             </div>
             <a href="{{ route('admin.add.product') }}" class="px-5 py-3 bg-yellow-400 hover:bg-yellow-600 hover:text-white duration-500 w-full rounded-xl border border-2 border-black shadow-md">
                 <p class="text-lg font-semibold flex justify-center items-center">Add products</p>

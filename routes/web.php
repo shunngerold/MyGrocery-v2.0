@@ -45,8 +45,8 @@ Route::get('/', [UserController::class, 'landing'])->name('index');
 // Logout user
 Route::post('/logout', [UserController::class, 'userLogout'])->middleware('auth')->name('logout');
 // Google Login
-Route::get('/redirect', [UserController::class, 'redirect'])->name('redirect');
-Route::get('/callback', [UserController::class, 'callback'])->name('callback');
+Route::get('/redirect', [UserController::class, 'redirect'])->middleware('guest')->name('redirect');
+Route::get('/callback', [UserController::class, 'callback'])->middleware('guest')->name('callback');
 
 // ======================== USER SIDE ===========================>
 Route::prefix('/user')->group(function() {

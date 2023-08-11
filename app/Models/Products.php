@@ -30,5 +30,14 @@ class Products extends Model
         if ($filters['category'] ?? false) {
             $query->where('category','like',request('category'));
         } 
+
+        if($filters['search'] ?? false) {
+            $query
+            ->orWhere('product_name','like','%'.request('search').'%')
+            ->orWhere('category','like','%'.request('search').'%')
+            ->orWhere('description','like','%'.request('search').'%')
+            ->orWhere('date_in_wh','like','%'.request('search').'%')
+            ->orWhere('date_expiry','like','%'.request('search').'%');
+        }
     }
 }

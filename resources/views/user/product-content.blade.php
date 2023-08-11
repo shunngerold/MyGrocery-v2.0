@@ -14,7 +14,7 @@
                 {{-- <x-product-template :product="$product" /> --}}
                 <div class="max-w-[18rem] bg-slate-100 rounded-lg shadow-xl">
                     <a href="#">
-                        <img class="p-8 rounded-lg" src="{{asset('images/logo-preview.png')}}" alt="product image" />
+                        <img class="p-8 rounded-lg h-72 w-72" src="{{ $product->product_image ? asset('storage/'.$product->product_image) : asset('images/logo-preview.png')}}" alt="product image" />
                     </a>
                     <div class="px-5 pb-5">
                         <a href="#">

@@ -15,6 +15,7 @@ class AdminController extends Controller
     public function products_admin(Request $request, Products $products) {
         return view('admin.products.product',[
             'products' => $products::latest()
+            ->filter(request(['search']))
             ->paginate(4)
         ]);
     }
