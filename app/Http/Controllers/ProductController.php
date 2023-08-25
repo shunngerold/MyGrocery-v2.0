@@ -15,4 +15,13 @@ class ProductController extends Controller
             ->paginate(10)
         ]);
     }
+    // show specific product
+    public function show_spec_products(Products $product) {
+        try {
+            return view('user.specific-product', ['product' => $product]);
+        } catch (ModelNotFoundException $e) {
+            // Handle the case when the product is not found
+            abort(404);
+        }
+    }
 }

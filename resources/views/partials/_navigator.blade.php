@@ -17,6 +17,14 @@
                 <ion-icon class="text-lime-900" name="menu" onclick="Menu(this)"></ion-icon>
             </span>
             @auth
+                <div class="relative block lg:hidden pr-6 text-lime-900">
+                    <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
+                        <ion-icon name="cart" class="w-10 h-10"></ion-icon>
+                    </a>
+                    <span class="absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
+                        23
+                    </span>
+                </div>
                 <div class="relative block lg:hidden select-none">
                     <a class="flex items-center" onclick="Profile(this)" name="profile" href="#" id="dropdownMenuButton2">
                         <img src="//tecdn.b-cdn.net/img/new/avatars/2.jpg" class="rounded-full w-12 h-12"/>
@@ -47,7 +55,7 @@
         </li>
         <li class="nav-item pr-8">
             <a class="flex items-center nav-link hover:text-lime-800 hover:underline p-0 flex justify-center cursor-pointer" name="products" onclick="Products(this)">
-                Products
+                <p>Products</p> 
                 <span class="ml-2 w-2">
                     <svg xmlns="//www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
@@ -96,10 +104,20 @@
                 MyDeals
             </a>
         </li>
-        <li class="nav-item pr-8">
+        <li class="nav-item pr-6">
             <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
                 Contact Us
             </a>
+        </li>
+        <li class="nav-item pr-6">
+            <div class="relative lg:block hidden">
+                <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
+                    <ion-icon name="cart" class="w-10 h-10"></ion-icon>
+                </a>
+                <span class="absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
+                    23
+                </span>
+            </div>
         </li>
         @auth
             <div class="relative lg:block hidden">
