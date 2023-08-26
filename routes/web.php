@@ -62,4 +62,6 @@ Route::prefix('/user')->group(function() {
     Route::get('/products', [ProductController::class, 'show_products'])->name('user.products');
     // Show specific product
     Route::get('/specific-product/{product}', [ProductController::class, 'show_spec_products'])->where('products', '[0-9]+')->name('user.spec.products');
+    // Show specific product
+    Route::get('/add-to-cart/{product}', [ProductController::class, 'add_to_cart'])->where('products', '[0-9]+')->name('user.add.cart');
 });

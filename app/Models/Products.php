@@ -40,4 +40,9 @@ class Products extends Model
             ->orWhere('date_expiry','like','%'.request('search').'%');
         }
     }
+    // // Define a method to retrieve specific field values by ID
+    // protected static function getProductFields($id, $fields = ['product_image','product_name','category','price','stock','description','date_in_wh','date_expiry','active'])
+    // {
+    //     return self::select($fields)->find($id);
+    // }
 }

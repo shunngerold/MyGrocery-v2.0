@@ -28,7 +28,7 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <span class="text-lg font-bold text-slate-900 mr-3">{{ "₱ " . $product->price }}</span>
-                            <a href="#" class="text-white bg-[#239807] hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-500">Add to cart</a>
+                            <a href="{{ route('user.add.cart', ['product' => $product->id]) }}" class="text-white bg-[#239807] hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-500">Add to cart</a>
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@
                     </div>
                     <div class="">
                         <div class="relative">
-                            <input type="passord" name="password" placeholder="Password" class="border-gray-400 p-2 rounded-xl border w-full">
+                            <input type="password" name="password" placeholder="Password" class="border-gray-400 p-2 rounded-xl border w-full">
                             <ion-icon name="eye-outline" class="absolute h-16 top-1/2 right-4 -translate-y-1/2"></ion-icon>
                         </div>
                         @error('password')
