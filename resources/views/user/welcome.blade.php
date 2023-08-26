@@ -8,7 +8,7 @@
         {{-- Navigator --}}
         @include('partials._navigator')
 
-        <div class="select-none" data-bs-spy="scroll" data-bs-target="#scrollspy1" data-bs-offset="200">
+        <div>
             <section id="home">
                 <div class="md:mt-0">
                     <section class="mb-16 overflow-hidden">
@@ -32,75 +32,59 @@
             </section>
             <section id="categories">
                 {{-- MyCategories --}}
-                <div class="container my-24 px-6 mx-auto">
+                <div class="container my-18 px-6 mx-auto">
                     <div class="flex justify-center pb-10">
-                        <h1 class="md:text-5xl text-4xl font-bold text-[#239807]">My Categories</h1>
+                        <h1 class="md:text-5xl text-2xl font-bold text-[#239807]">My Categories</h1>
                     </div>
-                    <section class="mb-32 text-gray-800 text-center mt-5">
-                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-6 gap-2 items-center md:px-16 px-0">
+                    <section class="md:mb-28 mb-0 text-gray-800 text-center mt-5">
+                        <div class="grid grid-cols-3 lg:grid-cols-4 gap-x-6 md:gap-6 gap-2 items-center md:px-16 px-0">
                             {{-- Canned Goods --}}
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=canned'}}">
-                                    <img src="{{ asset('images/mycategories/canned.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Canned Goods</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-6 lg:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/canned.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Canned Goods</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=breads_and_sweets'}}">
-                                    <img src="{{ asset('images/mycategories/breads.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Breads and Sweets</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/breads.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Breads and Sweets</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=snacks'}}">
-                                    <img src="{{ asset('images/mycategories/snacks.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Snacks</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/snacks.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Snacks</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=meats_and_poultry'}}">
-                                    <img src="{{ asset('images/mycategories/meats.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Meats and Poultry</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/meats.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Meats and Poultry</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=fruits_and_veggies'}}">
-                                    <img src="{{ asset('images/mycategories/veggies.png') }}" class="md:w-26 md:h-26 w-36 h-36 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Fruits and Veggies</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/veggies.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Fruits and Veggies</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=instant_goods'}}">
-                                    <img src="{{ asset('images/mycategories/instant.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Instant Goods</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/instant.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Instant Goods</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=beverages'}}">
-                                    <img src="{{ asset('images/mycategories/beverage.png') }}" class="md:w-46 md:h-36 w-46 h-40 mx-auto mb-1">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Beverages</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/beverage.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Beverages</h5>
                                 </a>
                             </div>
                             <div class="mb-12 lg:mb-0 relative">
                                 <a href="{{ route('user.products').'/?category=others'}}">
-                                    <img src="{{ asset('images/mycategories/others.png') }}" class="md:w-36 md:h-36 w-40 h-40 mx-auto mb-1+">
-                                    <h5 class="md:text-2xl text-lg font-semibold text-slate-800 font-bold mb-4">Others</h5>
-                                    <h6 class="font-lg text-sm text-gray-500 md:px-16 px-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus excepturi eveniet amet molestiae minus facere soluta mollitia quia ut, libero facilis corporis, iure officia minima? Dolor quia deserunt labore ut!</h6>
-                                    <hr class="absolute right-0 top-0 w-px bg-gray-200 h-full hidden lg:block" />
+                                    <img src="{{ asset('images/mycategories/others.png') }}" class="md:w-36 md:h-36 square-64 mx-auto mb-1">
+                                    <h5 class="md:text-2xl text-sm font-semibold text-slate-800 font-bold mb-4">Others</h5>
                                 </a>
                             </div>
                         </div>
@@ -109,27 +93,22 @@
             </section>
             {{-- About Us --}}
             <section id="aboutUs">
-                <div class="container px-6 mx-auto">
-                    <section class="mb-36 text-gray-800">
+                <div class="container mx-auto">
+                    <section class="mb-24 text-gray-800">
                         <div class="block shadow-lg bg-white">
                             <div class="flex flex-wrap items-center md:px-16">
                                 <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
-                                    <div class="px-6 py-12 md:px-12">
-                                        <h2 class="text-5xl text-[#239807] font-bold mb-6">What's new in MyGrocery?</h2>
-                                        <p class="text-gray-500 mb-6">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas
-                                            ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit,
-                                            inventore rem molestias laborum repudiandae corporis pariatur quo eius iste!
-                                            Quaerat, assumenda voluptates! Molestias, recusandae? Maxime fuga omnis ducimus. 
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas
-                                            ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit.
+                                    <div class="px-10 py-12 md:px-12">
+                                        <h2 class="md:text-5xl text-2xl text-[#239807] font-bold mb-6 break-words">What's new in MyGrocery?</h2>
+                                        <p class="text-gray-500 text-sm md:text-lg mb-6 break-words">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit, inventore rem molestias laborum repudiandae corporis pariatur quo eius iste! Quaerat, assumenda voluptates! Molestias, recusandae? Maxime fuga omnis ducimus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit.
                                         </p>
                                         <div class="flex flex-wrap xl:justify-start justify-center items-center md:my-0 flex py-10">
                                             <a href="" class="bg-[#239807] font-bold text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-6 py-3 mx-0 hover:bg-green-800 rounded-xl relative border border-stone-500 border-2">
                                                 <svg xmlns="//www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle-fill absolute top-1/2 -translate-y-1/2" viewBox="0 0 16 16">
                                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                                                 </svg>
-                                                <p class="ml-8 text-xl">Learn more About Us</p>
+                                                <p class="ml-8 md:text-xl text-sm">Learn more About Us</p>
                                             </a>
                                         </div>
                                     </div>
@@ -145,7 +124,7 @@
             </section>
             {{-- Deals --}}
             <section id="deals">
-                <div class="container my-6 px-6 mx-auto">
+                <div class="container my-6 mx-auto">
                     <section class="mb-32 text-gray-800">
                         <div class="block shadow-lg bg-white">
                             <div class="flex flex-wrap items-center md:px-16">
@@ -154,29 +133,24 @@
                                     class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
                                 </div>
                                 <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
-                                    <div class="px-6 py-6 md:px-12">
-                                        <h2 class="text-5xl text-[#239807] font-bold mb-6">More Exciting Deals!</h2>
-                                        <p class="text-gray-500">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas
-                                            ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit,
-                                            inventore rem molestias laborum repudiandae corporis pariatur quo eius iste!
-                                            Quaerat, assumenda voluptates! Molestias, recusandae? Maxime fuga omnis ducimus.
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas
-                                            ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit.
+                                    <div class="px-10 py-12 md:px-12">
+                                        <h2 class="md:text-5xl text-2xl text-[#239807] font-bold mb-6">More Exciting Deals!</h2>
+                                        <p class="text-gray-500 text-sm md:text-lg mb-6 break-words">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit, inventore rem molestias laborum repudiandae corporis pariatur quo eius iste! Quaerat, assumenda voluptates! Molestias, recusandae? Maxime fuga omnis ducimus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum maxime voluptas ipsam aliquam itaque cupiditate provident architecto expedita harum culpa odit.
                                         </p>
                                         <div class="flex flex-wrap xl:justify-start justify-center items-center md:my-0 py-10">
-                                            <a href="" class="bg-[#239807] font-bold text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-6 py-3 mx-0 hover:bg-green-800 rounded-xl relative border border-stone-500 border-2">
+                                            <a href="" class="bg-[#239807] font-bold text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-6 py-3 md:mx-0 hover:bg-green-800 rounded-xl relative border border-stone-500 border-2">
                                                 <svg xmlns="//www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-percent absolute top-1/2 -translate-y-1/2" viewBox="0 0 16 16">
                                                     <path d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                                                 </svg>
-                                                <p class="ml-8 text-xl">Go to MyDeals</p>
+                                                <p class="ml-8 md:text-xl text-md">Go to MyDeals</p>
                                             </a>
                                             <a href="" class="bg-yellow-400 text-lime-900 font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 mx-0 md:mx-6 my-4 px-6 py-3 hover:bg-yellow-600 hover:text-white rounded-xl relative border border-stone-500 border-2">
                                                 <svg xmlns="//www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tags-fill absolute top-1/2 -translate-y-1/2" viewBox="0 0 16 16">
                                                     <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
                                                     <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043-7.457-7.457z"/>
                                                 </svg>
-                                                <p class="ml-8 text-xl">View MyCoupons</p>
+                                                <p class="ml-8 md:text-xl text-sm">View MyCoupons</p>
                                             </a>
                                         </div>
                                     </div>
@@ -187,7 +161,7 @@
                 </div>
             </section>
             {{-- Contact Us --}}
-            <div class="container my-24 px-6 mx-auto">
+            <div class="container my-24 mx-auto">
                 <section class="mb-32 text-gray-800">
                     <div class="flex justify-center">
                         <div class="text-center lg:max-w-3xl md:max-w-xl">

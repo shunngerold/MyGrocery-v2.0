@@ -8,13 +8,13 @@
     {{-- Navigator --}}
     @include('partials._navigator')
 
-    <div class="flex flex-wrap justify-center items-center md:mt-16 mt-40 mb-16 gap-5 p-5">
+    <div class="flex flex-wrap justify-center items-center md:mt-16 mt-20 mb-16 gap-5 p-5">
         @unless(count($products) == 0)
             @foreach ($products as $product)
                 {{-- <x-product-template :product="$product" /> --}}
-                <div class="max-w-[18rem] bg-white rounded-lg shadow-xl">
+                <div class="bg-white rounded-lg shadow-xl">
                     <a href="{{ route('user.spec.products', ['product' => $product->id]) }}" class="flex justify-center items-center">
-                        <img class="p-8 rounded-lg h-44 w-44" src="{{ $product->product_image ? asset('storage/'.$product->product_image) : asset('images/logo-preview.png')}}" alt="product image" />
+                        <img class="p-5 rounded-lg h-44 w-44" src="{{ $product->product_image ? asset('storage/'.$product->product_image) : asset('images/logo-preview.png')}}" alt="product image" />
                     </a>
                     <div class="px-5 pb-5">
                         <h5 class="text-xl font-semibold tracking-tight text-slate-900 break-words">{{ $product->product_name }}</h5>
@@ -27,7 +27,7 @@
                             <span class="bg-green-200 text-lime-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3 border border-slate-400">5.0</span>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-slate-900 mr-5">{{ "₱ " . $product->price }}</span>
+                            <span class="text-lg font-bold text-slate-900 mr-3">{{ "₱ " . $product->price }}</span>
                             <a href="#" class="text-white bg-[#239807] hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-500">Add to cart</a>
                         </div>
                     </div>

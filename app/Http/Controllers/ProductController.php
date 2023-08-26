@@ -12,7 +12,7 @@ class ProductController extends Controller
         return view('user.product-content',[
             'products' => $products::latest()
             ->filter(request(['category']))
-            ->paginate(10)
+            ->paginate(20)
         ]);
     }
     // show specific product
