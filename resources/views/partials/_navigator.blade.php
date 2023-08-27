@@ -18,7 +18,7 @@
             </span>
             @auth
                 <div class="relative block lg:hidden pr-6 text-lime-900">
-                    <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
+                    <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="{{ route('user.cart') }}">
                         <ion-icon name="cart" class="w-10 h-10"></ion-icon>
                     </a>
                     <span class="cart-count absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
@@ -111,12 +111,14 @@
         </li>
         <li class="nav-item pr-6">
             <div class="relative lg:block hidden">
-                <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
+                <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="{{ route('user.cart') }}">
                     <ion-icon name="cart" class="w-10 h-10"></ion-icon>
                 </a>
-                <span class="cart-count absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
-                    {{-- JSON DATA HERE --}}
-                </span>
+                @auth
+                    <span class="cart-count absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
+                        {{-- JSON DATA HERE --}}
+                    </span>
+                @endauth
             </div>
         </li>
         @auth

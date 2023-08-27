@@ -65,6 +65,8 @@ Route::prefix('/user')->group(function() {
     Route::get('/products', [ProductController::class, 'show_products'])->name('user.products');
     // Show specific product
     Route::get('/specific-product/{product}', [ProductController::class, 'show_spec_products'])->where('products', '[0-9]+')->name('user.spec.products');
+    // Show cart
+    Route::get('/cart', [CartController::class, 'show_cart'])->name('user.cart');
     // Add-to-cart
-    Route::get('/add-to-cart/{product}', [CartController::class, 'add_to_cart'])->where('products', '[0-9]+')->middleware('auth')->name('user.add.cart');// Show products
+    Route::get('/add-to-cart/{product}', [CartController::class, 'add_to_cart'])->where('products', '[0-9]+')->middleware('auth')->name('user.add.cart');
 });

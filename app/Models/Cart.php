@@ -61,6 +61,10 @@ class Cart extends Model
     protected function CartCount()
     {   
         $count_product = self::where('user_id',Auth::user()->id)->count();
-        return response()->json(['count' => $count_product]);
+        if($count_product) {
+            return response()->json(['count' => $count_product]);
+        } else {
+            return response()->json(['count' => 0]);
+        }
     }
 }
