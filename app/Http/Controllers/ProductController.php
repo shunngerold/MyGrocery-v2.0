@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -28,12 +29,5 @@ class ProductController extends Controller
             // Handle the case when the product is not found
             abort(404);
         }
-    }
-    // Add to cart
-    public function add_to_cart(Products $product) {
-        dd($product);
-        // $productData = $product::getProductFields($product->id, ['product_image','product_name','category','price','stock','description','date_in_wh','date_expiry','active']);
-        $cartList = [];
-        return redirect(route('user.products'))->with('message','Product Added to your cart successfully!');
     }
 }

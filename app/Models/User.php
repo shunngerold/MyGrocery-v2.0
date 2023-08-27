@@ -5,7 +5,9 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Validation\Rule;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -66,6 +68,7 @@ class User extends Authenticatable
                 return redirect(route('index'))->with('message','You are now logged-in!');
             }
         }
+        return back()->withErrors(['password' => 'Invalid Credentials'])->onlyInput('password');
     }
     // Create new user
     protected static function NewUser($request) {
@@ -78,19 +81,32 @@ class User extends Authenticatable
         // Hash password
         $formFields['password'] = bcrypt($formFields['password']);
         // create user
-        $user = User::create($formFields);
+        $user = self::create($formFields);
         // auto login user
         auth()->login($user);
     }
     // Create new user - with Google ID
-    protected static function GoogleNewUser($googleUser) {
-        $user = User::create([
-            'google_id' => $googleUser->id,
-            'given_name' => $googleUser->user['given_name'],
-            'family_name' => $googleUser->user['family_name'],
-            'email' => $googleUser->email
-        ]);
-    
-        Auth::login($user);
+    protected static function GoogleNewUser() {
+        $googleUser = Socialite::driver('google')->user();
+        $exist_user = self::where('google_id',$googleUser->id)->first();
+
+        if($exist_user) {
+            Auth::login($exist_user);
+            if($exist_user->role == 1) { // if admin
+                return redirect(route('admin.dashboard'))->with('message','You are now logged-in!');
+            } else { // user
+                return redirect(route('index'))->with('message','You are now logged-in!');
+            }
+        } else {
+            $user = self::create([
+                'google_id' => $googleUser->id,
+                'given_name' => $googleUser->user['given_name'],
+                'family_name' => $googleUser->user['family_name'],
+                'email' => $googleUser->email
+            ]);
+        
+            Auth::login($user);
+            return redirect(route('index'))->with('message','You are now logged-in!');
+        }
     }
 }

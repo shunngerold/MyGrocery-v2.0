@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -28,8 +29,7 @@ class UserController extends Controller
     }
     // authenticate user
     public function user_authenticate(Request $request, User $userModel) {
-        $userModel::AuthUser($request);
-        return back()->withErrors(['password' => 'Invalid Credentials'])->onlyInput('password');
+        return $userModel::AuthUser($request);
     }
     // ================================ USER REGISTRATION ========================================
     // show register page
@@ -49,20 +49,7 @@ class UserController extends Controller
     // google callback
     public function callback(User $userModel, Socialite $socialite) {
         try {
-            $googleUser = $socialite::driver('google')->user();
-            $exist_user = $userModel::where('google_id',$googleUser->id)->first();
-
-            if($exist_user) {
-                Auth::login($exist_user);
-                if($exist_user->role == 1) { // if admin
-                    return redirect(route('admin.dashboard'))->with('message','You are now logged-in!');
-                } else { // user
-                    return redirect(route('index'))->with('message','You are now logged-in!');
-                }
-            } else {
-                $userModel::GoogleNewUser($request);
-                return redirect(route('index'));
-            }
+            return $userModel::GoogleNewUser();
         } catch(Exception $e) {
             dd($e->getMessage());
         }

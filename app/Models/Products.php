@@ -25,7 +25,7 @@ class Products extends Model
         'date_expiry',
         'active',
     ];
-
+    // Product search
     protected function scopeFilter($query, array $filters) {
         if ($filters['category'] ?? false) {
             $query->where('category','like',request('category'));
@@ -40,9 +40,4 @@ class Products extends Model
             ->orWhere('date_expiry','like','%'.request('search').'%');
         }
     }
-    // // Define a method to retrieve specific field values by ID
-    // protected static function getProductFields($id, $fields = ['product_image','product_name','category','price','stock','description','date_in_wh','date_expiry','active'])
-    // {
-    //     return self::select($fields)->find($id);
-    // }
 }

@@ -1,4 +1,4 @@
-<nav class="p-5 text-white bg-lime-200 shadow-md lg:flex lg:items-center lg:justify-between">
+<nav class="fixed top-0 p-5 z-30 w-full text-white bg-lime-200 shadow-md lg:flex lg:items-center lg:justify-between">
     <div class="flex justify-between items-center">
         <span class="text-5xl ml-5 flex justify-center items-center">
             <a class="text-xl pr-2 font-semibold" href="{{ route('index') }}">
@@ -21,15 +21,15 @@
                     <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
                         <ion-icon name="cart" class="w-10 h-10"></ion-icon>
                     </a>
-                    <span class="absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
-                        23
+                    <span class="cart-count absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
+                        {{-- JSON DATA HERE --}}
                     </span>
                 </div>
                 <div class="relative block lg:hidden select-none">
                     <a class="flex items-center" onclick="Profile(this)" name="profile" href="#" id="dropdownMenuButton2">
                         <img src="//tecdn.b-cdn.net/img/new/avatars/2.jpg" class="rounded-full w-12 h-12"/>
                     </a>
-                    <ul id="profile_popup" class="absolute hidden left-auto right-0 z-[1000] float-left m-0 mt-1 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg transition-all ease-in duration-200">
+                    <ul id="profile_popup" class="absolute hidden left-auto right-0 float-left m-0 mt-1 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg transition-all ease-in duration-200">
                         <li>
                             <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="#">Action</a>
                         </li>
@@ -49,7 +49,7 @@
             @endauth
         </div>
     </div>
-    <ul id="nav" class="select-none z-40 lg:mt-0 mt-5 lg:flex lg:items-center lg:z-auto lg:static absolute lg:bg-lime-200 bg-lime-100 text-lg text-lime-900 font-semibold w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 hidden transition-all ease-in duration-200">
+    <ul id="nav" class="select-none lg:mt-0 mt-5 lg:flex lg:items-center lg:static absolute lg:bg-lime-200 bg-lime-100 text-lg text-lime-900 font-semibold w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 hidden transition-all ease-in duration-200">
         <li class="nav-item pr-8 hover:text-lime-800 hover:underline flex justify-center">
             <a class="nav-link" href="/">Home</a>
         </li>
@@ -63,7 +63,7 @@
                 </span>
             </a>
             <div class="flex justify-center">
-                <ul id="products_popup" class="z-40 absolute hidden m-0 mt-2 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg">
+                <ul id="products_popup" class="absolute hidden m-0 mt-2 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg">
                     <li>
                         <a class="block w-full bg-transparent py-2 px-4 text-sm font-semibold text-white hover:bg-lime-400 hover:text-slate-700" href="{{ route('user.products') }}">All Products</a>
                     </li>
@@ -114,8 +114,8 @@
                 <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="#">
                     <ion-icon name="cart" class="w-10 h-10"></ion-icon>
                 </a>
-                <span class="absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
-                    23
+                <span class="cart-count absolute bg-red-600 rounded-xl w-5 h-5 text-[12px] text-white flex items-center justify-center top-1/4 left-8 -translate-y-1/2">
+                    {{-- JSON DATA HERE --}}
                 </span>
             </div>
         </li>
@@ -124,7 +124,7 @@
                 <a class="flex items-center" onclick="ProfileTwo(this)" name="profile" href="#" id="dropdownMenuButton2">
                     <img src="//tecdn.b-cdn.net/img/new/avatars/2.jpg" class="rounded-full w-12 h-12"/>
                 </a>
-                <ul id="profile_popup_two" class="absolute hidden left-auto right-0 z-[1000] float-left m-0 mt-1 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg">
+                <ul id="profile_popup_two" class="absolute hidden left-auto right-0 float-left m-0 mt-1 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg">
                     <li>
                         <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="#">Action</a>
                     </li>
@@ -206,3 +206,4 @@
         )
     }
 </script>
+<x-footer_links />

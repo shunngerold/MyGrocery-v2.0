@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SocialController;
@@ -42,6 +43,8 @@ Route::prefix('/admin')->middleware('isAdmin')->group(function() {
 // ======================== OTHER ROUTES ===========================>
 // Show welcome page
 Route::get('/', [UserController::class, 'landing'])->name('index');
+// show cart count
+Route::get('/cart-count', [CartController::class, 'cartCount'])->name('cart.count');
 // Logout user
 Route::post('/logout', [UserController::class, 'userLogout'])->middleware('auth')->name('logout');
 // Google Login
@@ -62,6 +65,6 @@ Route::prefix('/user')->group(function() {
     Route::get('/products', [ProductController::class, 'show_products'])->name('user.products');
     // Show specific product
     Route::get('/specific-product/{product}', [ProductController::class, 'show_spec_products'])->where('products', '[0-9]+')->name('user.spec.products');
-    // Show specific product
-    Route::get('/add-to-cart/{product}', [ProductController::class, 'add_to_cart'])->where('products', '[0-9]+')->name('user.add.cart');
+    // Add-to-cart
+    Route::get('/add-to-cart/{product}', [CartController::class, 'add_to_cart'])->where('products', '[0-9]+')->middleware('auth')->name('user.add.cart');// Show products
 });
