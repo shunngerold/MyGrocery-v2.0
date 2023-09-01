@@ -43,13 +43,15 @@ Route::prefix('/admin')->middleware('isAdmin')->group(function() {
 // ======================== OTHER ROUTES ===========================>
 // Show welcome page
 Route::get('/', [UserController::class, 'landing'])->name('index');
-// show cart count
-Route::get('/cart-count', [CartController::class, 'cartCount'])->name('cart.count');
 // Logout user
 Route::post('/logout', [UserController::class, 'userLogout'])->middleware('auth')->name('logout');
 // Google Login
 Route::get('/redirect', [UserController::class, 'redirect'])->middleware('guest')->name('redirect');
 Route::get('/callback', [UserController::class, 'callback'])->middleware('guest')->name('callback');
+
+// ======================== AUTO LOAD ROUTES =======================>
+// show cart count
+Route::get('/cart-count', [CartController::class, 'cartCount'])->name('cart.count');
 
 // ======================== USER SIDE ===========================>
 Route::prefix('/user')->group(function() {
@@ -66,7 +68,7 @@ Route::prefix('/user')->group(function() {
     // Show specific product
     Route::get('/specific-product/{product}', [ProductController::class, 'show_spec_products'])->where('products', '[0-9]+')->name('user.spec.products');
     // Show cart
-    Route::get('/cart', [CartController::class, 'show_cart'])->name('user.cart');
+    Route::get('/cart', [CartController::class, 'show_cart'])->middleware('auth')->name('user.cart');
     // Add-to-cart
     Route::get('/add-to-cart/{product}', [CartController::class, 'add_to_cart'])->where('products', '[0-9]+')->middleware('auth')->name('user.add.cart');
 });

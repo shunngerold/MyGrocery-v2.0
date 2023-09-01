@@ -11,7 +11,20 @@
 
 {{-- Tailwind CDN --}}
 <script src="//cdn.tailwindcss.com"></script>
-<script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>  
+<script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        /* Remove arrow keys (spinners) from number input */
+        .no-spinners::-webkit-inner-spin-button,
+        .no-spinners::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+        .no-spinners {
+            -moz-appearance: textfield; /* Firefox */
+        }
+    }
+</style>  
 
 {{-- IonIcons CDN --}}
 <script type="module" src="//unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -17,6 +17,7 @@ class Products extends Model
     protected $fillable = [
         'product_image',
         'product_name',
+        'uom',
         'category',
         'price',
         'stock',
@@ -39,5 +40,9 @@ class Products extends Model
             ->orWhere('date_in_wh','like','%'.request('search').'%')
             ->orWhere('date_expiry','like','%'.request('search').'%');
         }
+    }
+    // Relationship to cart
+    protected function cart(Cart $cart) {
+        return $this->hasMany($cart::class, 'product_id');
     }
 }

@@ -2,9 +2,9 @@
 <footer class="p-4 bg-lime-200 sm:p-6 mt-40">
     <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
-            <a href="://flowbite.com/" class="flex items-center">
-                <img src="images/logo-preview.png" class="h-12 mr-3" alt="MyGrocery Logo" />
-                <span class="self-center text-2xl font-bold whitespace-nowrap"><span class="text-lime-500">My</span>Grocery</span>
+            <a href="" class="flex items-center">
+                <img src="{{ asset('images/logo-preview.png') }}" class="h-12 mr-3" alt="MyGrocery Logo" />
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-yellow-500"><span class="text-lime-800">My</span>Grocery</span>
             </a>
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

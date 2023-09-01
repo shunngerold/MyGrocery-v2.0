@@ -17,6 +17,7 @@
                 <ion-icon class="text-lime-900" name="menu" onclick="Menu(this)"></ion-icon>
             </span>
             @auth
+                {{-- Cart --}}
                 <div class="relative block lg:hidden pr-6 text-lime-900">
                     <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="{{ route('user.cart') }}">
                         <ion-icon name="cart" class="w-10 h-10"></ion-icon>
@@ -109,6 +110,7 @@
                 Contact Us
             </a>
         </li>
+        {{-- Cart --}}
         <li class="nav-item pr-6">
             <div class="relative lg:block hidden">
                 <a class="nav-link hover:text-lime-800 hover:underline p-0 flex justify-center" href="{{ route('user.cart') }}">

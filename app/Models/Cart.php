@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\User;
+use App\Models\Products;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -66,5 +68,13 @@ class Cart extends Model
         } else {
             return response()->json(['count' => 0]);
         }
+    }
+    // Relationship to user
+    protected function user(User $user) {
+        return $this->belongsTo($user::class, 'user_id');
+    }
+    // Relationship to products
+    protected function products(Products $product) {
+        return $this->belongsTo($product::class, 'product_id');
     }
 }

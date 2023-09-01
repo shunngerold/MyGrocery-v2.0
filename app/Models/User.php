@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Cart;
 use Illuminate\Validation\Rule;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
@@ -108,5 +109,9 @@ class User extends Authenticatable
             Auth::login($user);
             return redirect(route('index'))->with('message','You are now logged-in!');
         }
+    }
+    // Relationship to cart
+    protected function cart(Cart $cart) {
+        return $this->hasMany($cart::class, 'user_id');
     }
 }

@@ -18,10 +18,11 @@ class ProductsFactory extends Factory
     {
         return [
             'product_name' => fake()->name(),
+            'uom' => fake()->name(),
             'category' => fake()->name(),
             'price' => fake()->numberBetween(18, 65),
             'stock' => fake()->numberBetween(18, 65),
-            'description' => fake()->paragraph(1),
+            'description' => fake()->paragraph(3),
             'date_in_wh' => fake()->date(),
             'date_expiry' => fake()->date(),
         ];
