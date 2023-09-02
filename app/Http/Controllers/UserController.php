@@ -51,7 +51,7 @@ class UserController extends Controller
         try {
             return $userModel::GoogleNewUser();
         } catch(Exception $e) {
-            dd($e->getMessage());
+            abort(404);
         }
     }
 }

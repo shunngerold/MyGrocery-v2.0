@@ -39,7 +39,7 @@
                         <p class="md:text-2xl font-semibold text-slate-500">{{ $product->stock }}</p> 
                     </div>
                     <div class="flex items-center justify-start py-5 mt-5">
-                        <h3 class="break-all text-2xl font-semibold">{{ $product->description }}</h3>
+                        <h3 class="break-words text-2xl font-semibold">{{ $product->description }}</h3>
                     </div>
                 </div>
                 <div class="flex items-start justify-center">
@@ -47,7 +47,9 @@
                         <div class="flex flex-col gap-2">
                             <h3 class="md:text-2xl font-semibold text-slate-800">Quantity</h3>
                             <input type="hidden" id="product-price" value="{{ $product->price }}">
-                            <input type="number" id="input-quantity" class="shadow-md rounded-lg text-center font-semibold text-xl text-stone-800 no-spinners" value="1">
+                            <form action="{{ route('user.add.cart', ['product' => $product->id]) }}" id="add-to-cart" method="get" class="flex items-center justify-center">
+                                <input type="number" name="qty" min="1" max="100" id="input-quantity" class="shadow-md w-full rounded-lg text-center font-semibold text-xl text-stone-800 no-spinners" value="1">
+                            </form>
                             <span id="error-message" class="text-sm font-lead text-red-500 hidden"></span>
                             <div class="flex items-center justify-start gap-3">
                                 <h3 class="md:text-2xl font-semibold text-slate-900">Price:</h3>
@@ -59,10 +61,10 @@
                                 <ion-icon name="newspaper-outline" class="w-7 h-7"></ion-icon>
                                 <p class="text-lg font-semibold ">Send note to this product</p>
                             </a>
-                            <a href="" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-white bg-[#239807] rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+                            <button type="submit" form="add-to-cart" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-white bg-[#239807] rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
                                 <ion-icon name="cart" class="w-7 h-7"></ion-icon>
                                 <p class="text-lg font-semibold ">Add to Cart</p>
-                            </a>
+                            </button>
                             <a href="" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-white bg-[#239807] rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
                                 <ion-icon name="wallet-outline" class="w-7 h-7"></ion-icon>
                                 <p class="text-lg font-semibold ">Buy Now</p>

@@ -13,10 +13,10 @@ function updateContent(inputValue) {
         document.getElementById('content-price').innerHTML = '₱' + price;
     } else {
         if(inputValue > 100) {
-            errorMsg.innerHTML = "The quantity value is limited to 100.";
+            errorMsg.innerHTML = "Value must be less than or equal to 100.";
             errorMsg.classList.remove('hidden');
         } else if(inputValue == 0) {
-            errorMsg.innerHTML = "The quantity value cannot decrease by 1.";
+            errorMsg.innerHTML = "Value must be greater or equal to 1.";
             errorMsg.classList.remove('hidden');
             document.getElementById('content-price').innerHTML = '₱' + 0;
         } else {

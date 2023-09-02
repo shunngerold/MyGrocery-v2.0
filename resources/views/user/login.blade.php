@@ -60,5 +60,6 @@
             </div>
         </div>
     </x-card>
+    <x-footer_links />
 </body>
 </html>

@@ -14,9 +14,13 @@ class CartController extends Controller
         return view('user.cart');
     }
     // Add to cart
-    public function add_to_cart(Cart $cart, Products $product) {
-        $cart::AddtoCart($product);
-        return redirect(route('user.products'))->with('message','Product Added to your cart successfully!');
+    public function add_to_cart(Cart $cart, Products $product, Request $request) {
+        try {
+            $cart::AddtoCart($product, $request);
+            return back()->with('message','Product Added to your cart successfully!');
+        } catch(Exception $e) {
+            abort(404);
+        }
     }
     // Count cart data
     public function cartCount(Cart $cart) {

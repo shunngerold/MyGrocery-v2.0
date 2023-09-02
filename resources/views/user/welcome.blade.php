@@ -287,5 +287,6 @@
         {{-- Footer --}}
         @include('partials._footer')
         <x-flash_message />
+        <x-footer_links />
     </body>
 </html>

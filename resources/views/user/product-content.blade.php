@@ -27,10 +27,10 @@
                             <span class="bg-green-200 text-lime-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3 border border-slate-400">5.0</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <h3 class="font-semibold text-stone-800 text-md">Qty:</h3>
-                            <input type="number" min="1" max="100" class="w-20 h-3 shadow-sm rounded-md no-spinners py-3 border border-1 border-stone-900 font-semibold text-center text-sm" value="1">
+                            <h3 class="font-semibold text-stone-800 text-md">Remaining stock:</h3>
+                            <p class="font-semibold text-stone-500 text-md">{{ $product->stock }}</p>
                         </div>
-                        <div class="flex items-center justify-between mt-5">
+                        <div class="flex items-center justify-between mt-3">
                             <span class="text-lg font-bold text-slate-900 mr-3">{{ "₱ " . $product->price }}</span>
                             <a href="{{ route('user.add.cart', ['product' => $product->id]) }}" class="text-white bg-[#239807] hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-500">Add to cart</a>
                         </div>
@@ -46,7 +46,7 @@
     </div>
     {{-- Footer --}}
     @include('partials._footer')
-    <x-footer_links />
     <x-flash_message />
+    <x-footer_links />
 </body>
 </html>

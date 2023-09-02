@@ -209,5 +209,16 @@
             list.classList.remove('hidden')
         )
     }
+    setInterval(function() {
+        let list = document.getElementById('nav')
+        let list2 = document.getElementById('profile_popup')
+        let list3 = document.getElementById('profile_popup_two')
+        let list4 = document.getElementById('products_popup')
+
+        list.classList.add('hidden')
+        list2.classList.add('hidden')
+        list3.classList.add('hidden')
+        list4.classList.add('hidden')
+    }, 15000);
+
 </script>
-<x-footer_links />

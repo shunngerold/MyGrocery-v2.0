@@ -33,31 +33,37 @@ class Cart extends Model
     ];
 
     // Add-to-cart
-    protected function AddtoCart($product)
+    protected function AddtoCart($product, $request)
     {   
+        $cartList = [];
+        $qty = $request->input('qty', null);
         $exist_product = self::where('product_id',$product->id)->where('user_id',Auth::user()->id)->first();
 
         if ($exist_product) {
-            $updated_qty = $exist_product->quantity + 1;
-            $exist_product->update([
-                'quantity' => $updated_qty,
-            ]);
+            if (is_numeric($qty)) {
+                $cartList['quantity'] = $exist_product->quantity + intval($request->qty);
+                $exist_product->update($cartList);
+            } 
+            if (is_null($qty)) {
+                $cartList['quantity'] = $exist_product->quantity + 1;
+                $exist_product->update($cartList);
+            }
         } else {
-            $cartList = [
-                'user_id' => Auth::user()->id,
-                'product_id' => $product->id,
-                'product_image' => $product->product_image,
-                'product_name' => $product->product_name,
-                'category' => $product->category,
-                'price' => $product->price,
-                'stock' => $product->stock,
-                'description' => $product->description,
-                'date_in_wh' => $product->date_in_wh,
-                'date_expiry' => $product->date_expiry,
-                'active' => $product->active,
-            ];
-
-            self::create($cartList);
+            if (is_numeric($qty) || is_null($qty)) {
+                $cartList['user_id'] = Auth::user()->id;
+                $cartList['product_id'] = $product->id;
+                $cartList['product_image'] = $product->product_image;
+                $cartList['product_name'] = $product->product_name;
+                $cartList['category'] = $product->category;
+                $cartList['price'] = $product->price;
+                $cartList['stock'] = $product->stock;
+                $cartList['description'] = $product->description;
+                $cartList['date_in_wh'] = $product->date_in_wh;
+                $cartList['date_expiry'] = $product->date_expiry;
+                $cartList['active'] = $product->active;
+                $cartList['quantity'] = 1;
+                self::create($cartList);
+            } 
         }
     }   
     protected function CartCount()
