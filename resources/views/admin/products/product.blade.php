@@ -3,7 +3,7 @@
         <div class="flex justify-center items-center">
             <h3 class="text-3xl font-semibold uppercase font-mono mb-5">Product List</h3>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 h-58">
             @unless(count($products) == 0)
                 @foreach ($products as $product)
                     <div class="w-full bg-lime-300 p-4 rounded-xl border border-2 border-lime-800 shadow-xl flex items-center">
@@ -27,7 +27,14 @@
                     </div>
                 @endforeach
             @else
-                <x-noProducts />
+                <div class="w-full h-full flex justify-center items-center">
+                    <div class="grid grid-rows-3 gap-3">
+                        <div class="row-span-2 flex justify-center">
+                            <img class="w-52 h-32" src="{{ asset('images/no_data.svg') }}">
+                        </div>
+                        <h3 class="flex justify-center text-xl font-semibold">No product items</h3>
+                    </div>
+                </div>
             @endunless
             <div class="my-5">
                 {{$products->links()}}

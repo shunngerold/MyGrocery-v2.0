@@ -32,7 +32,7 @@
                     </a>
                     <ul id="profile_popup" class="absolute hidden left-auto right-0 float-left m-0 mt-1 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg transition-all ease-in duration-200">
                         <li>
-                            <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="#">Action</a>
+                            <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="{{ route('user.profile') }}">MyProfile</a>
                         </li>
                         <li>
                             <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="#">Another action</a>
@@ -130,7 +130,7 @@
                 </a>
                 <ul id="profile_popup_two" class="absolute hidden left-auto right-0 float-left m-0 mt-1 min-w-max list-none overflow-hidden rounded-lg border-none bg-neutral-700 text-left text-base shadow-lg">
                     <li>
-                        <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="#">Action</a>
+                        <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="{{ route('user.profile') }}">MyProfile</a>
                     </li>
                     <li>
                         <a class="block w-full bg-transparent py-2 px-4 text-sm font-normal text-neutral-200 font-semibold hover:bg-lime-400 hover:text-white" href="#">Another action</a>

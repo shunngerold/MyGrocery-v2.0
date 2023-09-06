@@ -5,7 +5,7 @@
     <title>MyGrocery | Register</title>
 </head>
 <body>
-    <x-card>
+    <x-card class="bg-lime-200">
         {{-- Register container --}}
         <div class="bg-lime-100 flex rounded-2xl shadow-lg max-w-4xl p-5">
             {{-- form --}}

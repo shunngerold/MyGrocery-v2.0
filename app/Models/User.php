@@ -86,6 +86,10 @@ class User extends Authenticatable
         // auto login user
         auth()->login($user);
     }
+    protected function MyProfile() {
+        $search_user = self::where('id', Auth::user()->id)->first();
+        return view('user.profile',['profile' => $search_user]);
+    }
     // Create new user - with Google ID
     protected static function GoogleNewUser() {
         $googleUser = Socialite::driver('google')->user();

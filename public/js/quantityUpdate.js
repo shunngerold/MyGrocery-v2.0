@@ -19,10 +19,12 @@ function updateContent(inputValue) {
             errorMsg.innerHTML = "Value must be greater or equal to 1.";
             errorMsg.classList.remove('hidden');
             document.getElementById('content-price').innerHTML = '₱' + 0;
+            document.getElementById('content-price2').value = 0;
         } else {
             var updated_price = price * inputValue;
             errorMsg.classList.add('hidden');
             document.getElementById('content-price').innerHTML = '₱' + updated_price;
+            document.getElementById('content-price2').value = updated_price;
         }
     }
 }

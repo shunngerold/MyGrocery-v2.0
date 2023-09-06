@@ -49,6 +49,7 @@
                             <input type="hidden" id="product-price" value="{{ $product->price }}">
                             <form action="{{ route('user.add.cart', ['product' => $product->id]) }}" id="add-to-cart" method="get" class="flex items-center justify-center">
                                 <input type="number" name="qty" min="1" max="100" id="input-quantity" class="shadow-md w-full rounded-lg text-center font-semibold text-xl text-stone-800 no-spinners" value="1">
+                                <input type="hidden" name="cart_price" id="content-price2">
                             </form>
                             <span id="error-message" class="text-sm font-lead text-red-500 hidden"></span>
                             <div class="flex items-center justify-start gap-3">
@@ -57,10 +58,6 @@
                             </div>
                         </div>
                         <div class="flex flex-col justify-center gap-4 items-center">
-                            <a href="" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-slate-900 bg-yellow-500 rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
-                                <ion-icon name="newspaper-outline" class="w-7 h-7"></ion-icon>
-                                <p class="text-lg font-semibold ">Send note to this product</p>
-                            </a>
                             <button type="submit" form="add-to-cart" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-white bg-[#239807] rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
                                 <ion-icon name="cart" class="w-7 h-7"></ion-icon>
                                 <p class="text-lg font-semibold ">Add to Cart</p>
@@ -68,6 +65,10 @@
                             <a href="" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-white bg-[#239807] rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
                                 <ion-icon name="wallet-outline" class="w-7 h-7"></ion-icon>
                                 <p class="text-lg font-semibold ">Buy Now</p>
+                            </a>
+                            <a href="{{ route('user.products') }}" class="flex gap-3 justify-center items-center py-2 px-4 w-full text-slate-900 bg-yellow-500 rounded-lg border border-2 border-slate-400 shadow-xl duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+                                <ion-icon name="arrow-back-outline" class="w-7 h-7"></ion-icon>
+                                <p class="text-lg font-semibold">Back to products</p>
                             </a>
                         </div>
                     </div>

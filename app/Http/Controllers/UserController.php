@@ -54,4 +54,8 @@ class UserController extends Controller
             abort(404);
         }
     }
+    // User Profile
+    public function myProfile(User $user) {
+        return $user::MyProfile();
+    }
 }

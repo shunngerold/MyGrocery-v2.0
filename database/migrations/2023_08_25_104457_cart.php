@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('product_image')->nullable();
             $table->string('product_name');
             $table->string('category');
-            $table->integer('price');
+            $table->integer('product_price');
+            $table->integer('cart_price');
             $table->integer('stock');
             $table->string('description');
             $table->integer('quantity')->default('1');

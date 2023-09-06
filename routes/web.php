@@ -71,4 +71,6 @@ Route::prefix('/user')->group(function() {
     Route::get('/cart', [CartController::class, 'show_cart'])->middleware('auth')->name('user.cart');
     // Add-to-cart
     Route::get('/add-to-cart/{product}', [CartController::class, 'add_to_cart'])->where('products', '[0-9]+')->middleware('auth')->name('user.add.cart');
+    // Show profile
+    Route::get('/my-profile', [UserController::class, 'myProfile'])->middleware('auth')->name('user.profile');
 });
