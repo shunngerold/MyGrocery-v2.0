@@ -9,7 +9,7 @@
     @include('partials._navigator')
     
     <div class="mt-28">
-        sdasdsaasd
+        sdasdsaasdasdsa
     </div>
 
     {{-- Footer --}}
