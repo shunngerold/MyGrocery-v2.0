@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <x-header_links />
-        <title>Welcome | MyGrocery</title>
+        <title>Home | MyGrocery</title>
     </head>
     <body>
         {{-- Navigator --}}

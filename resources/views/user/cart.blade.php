@@ -63,38 +63,34 @@
         </div>
         <div class="">
             <div class="py-5 px-10">
-                <div class="h-[30rem] w-[30rem] border border-4 border-stone-300 shadow-md p-3 rounded-xl grid grid-rows-5">
-                    <div class="shadow-md flex items-center justify-between p-8">
-                        <div class="flex items-center gap-4">
-                            <input type="radio" name="transaction-type" class="checked:text-lime-600 border border-2">
-                            <label for="transaction-type" class="font-semibold text-lg text-stone-700">Home Delivery</label>
+                <form action="{{ route('user.checkout.form') }}" method="POST">
+                    @csrf
+                    <div class="h-[30rem] w-[30rem] border border-4 border-stone-300 shadow-md p-3 rounded-xl grid grid-rows-4">
+                        <div class="shadow-md grid grid-rows-2 py-3">
+                            <div class="flex items-center justify-between px-16">
+                                <h3 class="text-stone-700 font-semibold text-2xl">Subtotal:</h3>
+                                <input type="hidden" name="sub" value="34">
+                                <p class="text-stone-600 font-semibold text-2xl">₱34</p>
+                            </div>
+                            <div class="flex items-center justify-between px-16">
+                                <h3 class="text-stone-700 font-semibold text-2xl">Delivery:</h3>
+                                <input type="hidden" name="delivery" value="34">
+                                <p class="text-stone-600 font-semibold text-2xl">₱34</p>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <input type="radio" name="transaction-type" class="checked:text-lime-600 border border-2">
-                            <label for="transaction-type" class="font-semibold text-lg text-stone-700">Click and Pickup</label>
+                        <div class="shadow-md flex items-center justify-between px-16">
+                            <h1 class="text-stone-700 font-semibold text-3xl">Total:</h1>
+                            <input type="hidden" name="total" value="234">
+                            <p class="text-stone-600 font-semibold text-3xl">₱234</p>
+                        </div>  
+                        <div class="shadow-md flex justify-center items-center px-10">
+                            <button type="submit" class="bg-[#239807] w-full duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 rounded-full border border-2 border-slate-400 shadow-md text-center text-xl font-semibold text-white p-3">Checkout</button>
+                        </div>
+                        <div class="flex items-center text-center p-5">
+                            <p class="font-lead text-sm">This site is protected by <span class="font-semibold text-lime-600">PayMongo Philippines, Inc.</span> and <span class="font-semibold text-lime-600">PayMongo Payments, Inc.</span> Regulated by the Bangko Sentral ng Pilipinas. www.bsp.gov.ph</p>
                         </div>
                     </div>
-                    <div class="shadow-md flex flex-col gap-2 py-3 px-20">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-stone-700 font-semibold text-xl">Subtotal:</h3>
-                            <p class="text-stone-600 font-semibold text-xl">₱34</p>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-stone-700 font-semibold text-xl">Delivery:</h3>
-                            <p class="text-stone-600 font-semibold text-xl">₱34</p>
-                        </div>
-                    </div>
-                    <div class="shadow-md flex items-center justify-between px-16">
-                        <h1 class="text-stone-700 font-semibold text-3xl">Total:</h1>
-                        <p class="text-stone-600 font-semibold text-3xl">₱234</p>
-                    </div>  
-                    <div class="shadow-md flex justify-center items-center px-10">
-                        <a href="" class="bg-[#239807] w-full duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 rounded-full border border-2 border-slate-400 shadow-md text-center text-xl font-semibold text-white p-3">Checkout</a>
-                    </div>
-                    <div class="flex items-center text-center p-5">
-                        <p class="font-lead text-sm">This site is protected by <span class="font-semibold text-lime-600">PayMongo Philippines, Inc.</span> and <span class="font-semibold text-lime-600">PayMongo Payments, Inc.</span> Regulated by the Bangko Sentral ng Pilipinas. www.bsp.gov.ph</p>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="px-10">
                 <div class="h-[15rem] w-[30rem] border border-4 border-stone-300 shadow-md p-3 rounded-xl flex flex-col gap-3">

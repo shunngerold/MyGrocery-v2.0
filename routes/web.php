@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -48,6 +49,9 @@ Route::post('/logout', [UserController::class, 'userLogout'])->middleware('auth'
 // Google Login
 Route::get('/redirect', [UserController::class, 'redirect'])->middleware('guest')->name('redirect');
 Route::get('/callback', [UserController::class, 'callback'])->middleware('guest')->name('callback');
+// Paymongo routes
+Route::get('/cashout-pay',[PaymentController::class, 'cashoutPay'])->middleware('auth')->name('cashout.pay');
+Route::get('/cashout-success',[PaymentController::class, 'cashoutSuccess'])->middleware('auth')->name('cashout.success');
 
 // ======================== AUTO LOAD ROUTES =======================>
 // show cart count
@@ -71,6 +75,8 @@ Route::prefix('/user')->group(function() {
     Route::get('/cart', [CartController::class, 'show_cart'])->middleware('auth')->name('user.cart');
     // Add-to-cart
     Route::get('/add-to-cart/{product}', [CartController::class, 'add_to_cart'])->where('products', '[0-9]+')->middleware('auth')->name('user.add.cart');
+    // Show checkout form
+    Route::post('/checkout-form', [CartController::class, 'checkoutForm'])->middleware('auth')->name('user.checkout.form');
     // Show profile
     Route::get('/my-profile', [UserController::class, 'myProfile'])->middleware('auth')->name('user.profile');
 });

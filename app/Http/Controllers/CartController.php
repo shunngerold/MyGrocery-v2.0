@@ -21,6 +21,10 @@ class CartController extends Controller
             abort(404);
         }
     }
+    // Show checkout form
+    public function checkoutForm(Request $request) {
+        return view('user.checkout-form');
+    }
     // Count cart data
     public function cartCount(Cart $cart) {
        return $cart::CartCount();
