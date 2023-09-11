@@ -13,6 +13,19 @@ class PaymentController extends Controller
         $data = [
             'data' => [
                 'attributes' => [
+                    'billing' => [
+                        'address' => [
+                            'line1' => "djhygajdjasd",
+                            'line2' => "djhygajdjasd",
+                            'city' => "djhygajdjasd",
+                            'state' => "djhygajdjasd",
+                            'postal_code' => "djhygajdjasd",
+                            'country' => "PH",
+                        ],
+                        'name' => "Sansan",
+                        'email' => "shunngerold@gmail.com",
+                        'phone' => "09971882635",
+                    ],
                     'line_items' => [
                         [
                             'currency' => 'PHP',

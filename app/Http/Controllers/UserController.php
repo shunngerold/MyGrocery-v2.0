@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\User;
 use App\Models\Products;
+use App\Models\Addresses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -54,8 +55,12 @@ class UserController extends Controller
             abort(404);
         }
     }
-    // User Profile
-    public function myProfile(User $user) {
-        return $user::MyProfile();
+    // User Manage Profile
+    public function manageProfile(User $user) {
+        return $user::ManageProfile();
+    }
+    // User Address Profile
+    public function addressBook(Addresses $address) {
+        return $address::AddressBook();
     }
 }

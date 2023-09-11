@@ -4,3 +4,4 @@
 
 <script type="text/javascript" src="{{asset('js/cartCount.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/quantityUpdate.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/encryptEmail.js')}}"></script>

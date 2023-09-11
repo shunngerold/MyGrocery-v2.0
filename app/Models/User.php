@@ -86,9 +86,9 @@ class User extends Authenticatable
         // auto login user
         auth()->login($user);
     }
-    protected function MyProfile() {
+    protected function ManageProfile() {
         $search_user = self::where('id', Auth::user()->id)->first();
-        return view('user.profile',['profile' => $search_user]);
+        return view('user.profile.manage-my-acc',['profile' => $search_user]);
     }
     // Create new user - with Google ID
     protected static function GoogleNewUser() {

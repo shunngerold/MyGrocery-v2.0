@@ -11,7 +11,7 @@ class CartController extends Controller
 {
     // Show Cart
     public function show_cart(Cart $cart) {
-        return view('user.cart',['cart' => $cart::all()->sortByDesc('created_at')]);
+        return $cart::ShowCart();
     }
     // Add to cart
     public function add_to_cart(Cart $cart, Products $product, Request $request) {

@@ -74,6 +74,11 @@ class Cart extends Model
         }
         return back()->with('message','Product Added to your cart successfully!');
     }   
+    protected function ShowCart()
+    {   
+        $show_product = self::where('user_id',Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        return view('user.cart',['cart' => $show_product]);
+    }
     protected function CartCount()
     {   
         $count_product = self::where('user_id',Auth::user()->id)->count();

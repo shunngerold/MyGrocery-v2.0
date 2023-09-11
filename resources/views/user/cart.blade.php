@@ -8,7 +8,7 @@
     {{-- Navigator --}}
     @include('partials._navigator')
 
-    <main class="mt-24 min-h-screen flex justify-center items-start py-5">
+    <main class="mt-24 flex justify-center items-start py-5">
         <div class="px-4">
             <div class="p-3">
                 <h1 class="font-bold text-xl flex items-center gap-2">Your Cart <span class="text-sm font-lead text-stone-400">(items: {{count($cart)}})</span></h1>
@@ -50,7 +50,7 @@
                         {{-- end of cart items --}}
                     @endforeach
                 @else
-                    <div class="w-full h-full flex justify-center items-center">
+                    <div class="w-full h-full flex justify-center items-start pt-10">
                         <div class="grid grid-rows-3 gap-3">
                             <div class="row-span-2 flex justify-center">
                                 <img class="w-52 h-32" src="{{ asset('images/no_data.svg') }}">
@@ -62,29 +62,29 @@
             </div>
         </div>
         <div class="">
-            <div class="py-5 px-10">
+            <div class="py-3 px-10">
                 <form action="{{ route('user.checkout.form') }}" method="POST">
                     @csrf
-                    <div class="h-[30rem] w-[30rem] border border-4 border-stone-300 shadow-md p-3 rounded-xl grid grid-rows-4">
-                        <div class="shadow-md grid grid-rows-2 py-3">
+                    <div class="h-[21.5rem] w-[30rem] border border-4 border-stone-300 shadow-md py-3 rounded-xl flex flex-col">
+                        <div class="shadow-md flex flex-col gap-3">
                             <div class="flex items-center justify-between px-16">
-                                <h3 class="text-stone-700 font-semibold text-2xl">Subtotal:</h3>
+                                <h3 class="text-stone-700 font-semibold text-xl">Subtotal:</h3>
                                 <input type="hidden" name="sub" value="34">
-                                <p class="text-stone-600 font-semibold text-2xl">₱34</p>
+                                <p class="text-stone-600 font-semibold text-xl">₱34</p>
                             </div>
                             <div class="flex items-center justify-between px-16">
-                                <h3 class="text-stone-700 font-semibold text-2xl">Delivery:</h3>
+                                <h3 class="text-stone-700 font-semibold text-xl">Delivery:</h3>
                                 <input type="hidden" name="delivery" value="34">
-                                <p class="text-stone-600 font-semibold text-2xl">₱34</p>
+                                <p class="text-stone-600 font-semibold text-xl">₱34</p>
                             </div>
+                            <div class="flex items-center justify-between px-16 mb-5">
+                                <h1 class="text-stone-700 font-semibold text-3xl">Total:</h1>
+                                <input type="hidden" name="total" value="234">
+                                <p class="text-stone-600 font-semibold text-3xl">₱234</p>
+                            </div>  
                         </div>
-                        <div class="shadow-md flex items-center justify-between px-16">
-                            <h1 class="text-stone-700 font-semibold text-3xl">Total:</h1>
-                            <input type="hidden" name="total" value="234">
-                            <p class="text-stone-600 font-semibold text-3xl">₱234</p>
-                        </div>  
-                        <div class="shadow-md flex justify-center items-center px-10">
-                            <button type="submit" class="bg-[#239807] w-full duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 rounded-full border border-2 border-slate-400 shadow-md text-center text-xl font-semibold text-white p-3">Checkout</button>
+                        <div class="shadow-md flex justify-center items-center py-5 px-10">
+                            <button type="submit" class="bg-[#239807] w-[70%] duration-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 rounded-full border border-2 border-slate-400 shadow-md text-center text-lg font-semibold text-white p-2">Checkout</button>
                         </div>
                         <div class="flex items-center text-center p-5">
                             <p class="font-lead text-sm">This site is protected by <span class="font-semibold text-lime-600">PayMongo Philippines, Inc.</span> and <span class="font-semibold text-lime-600">PayMongo Payments, Inc.</span> Regulated by the Bangko Sentral ng Pilipinas. www.bsp.gov.ph</p>
