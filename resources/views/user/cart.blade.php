@@ -89,7 +89,7 @@
                         <div class="flex items-center text-center p-5">
                             <p class="font-lead text-sm">This site is protected by <span class="font-semibold text-lime-600">PayMongo Philippines, Inc.</span> and <span class="font-semibold text-lime-600">PayMongo Payments, Inc.</span> Regulated by the Bangko Sentral ng Pilipinas. www.bsp.gov.ph</p>
                         </div>
-                    </div>
+                    </div> 
                 </form>
             </div>
             <div class="px-10">
